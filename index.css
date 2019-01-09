@@ -1,7 +1,54 @@
+@keyframes blink {
+  0% {color: red; visibility: visible;} 
+  50% {color: blue; visibility: hidden;}
+  100% {color: green;}
+}
 .box-example {
   background: gray;
   color: white;
   width: 100px;
   height: 100px;
-  /* padding: 20px;
-} */
+  animation-name: blink;
+  animation-duration: 20s;
+}
+
+.container {
+  width: 400px;
+  height: 400px;
+  margin: 100px 200px;
+  border: 10px solid goldenrod;
+  /* position: relative; */
+}
+.child {
+  width: 200px;
+  height: 200px;
+  border: 10px solid green;
+  /* position: relative; */
+  top: 10px;
+  left: 100px;
+}
+
+.grandchild {
+  width: 20px;
+  height: 20px;
+  border: 10px solid goldenrod;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+body,
+html {
+  position: absolute;
+}
+/* Two exercises here: 
+First: look at where the grandchild is without any parents positioned. Then alternate uncommenting the positions of the parent, child, and grandchild. Noting which elements are positioned.
+
+Second: noptice that even when the parent is not positioned, the child moves relatively to the parent.
+
+This is the difference between relative and absolute. With relative the element is positioned relative to the parent, always. With absolute, the element is only positioned relative to the nearest positioned parent.
+
+Feel free to play around with the elements and their positioning.
+*/
+
+
